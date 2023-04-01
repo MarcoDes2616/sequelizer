@@ -1,7 +1,6 @@
 const { Router } = require("express");
 const Users = require("../models/users.models");
 const router = Router();
-const User = require('../models/users.models')
 
 
 router.get('/api/v1/users', async (req, res) => {
@@ -19,7 +18,6 @@ router.get('/api/v1/users', async (req, res) => {
 router.post('/api/v1/users', async (req, res) => {
     try {
         const newuser = req.body
-        console.log(newuser);
         const result = await Users.create(newuser);
         res.status(201).json(result);
     } catch (error) {
